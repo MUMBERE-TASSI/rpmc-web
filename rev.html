@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reverend Passy Kahindo</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: #f5f7fa;
+}
+
+.header {
+    background: linear-gradient(to right, #0d6efd, #0dcaf0);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.profile-card {
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.profile-img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.section-title {
+    color: #0d6efd;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="home.html">
+        <img src="logo.png" alt="RPMC Logo" class="rounded-circle me-2" style="width:50px; height:50px; object-fit:cover;">
+        RPMC Church
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          
+       
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="header">
+    <h2>Reverend Passy Kahindo</h2>
+    <p>Missionary from Congo — Servant of God</p>
+    
+</div>
+
+<div class="container mt-5">
+
+<div class="row">
+
+    <!-- Photo -->
+    <div class="col-md-4">
+        <div class="card profile-card p-3">
+            <img src="rev.jpg" class="profile-img" alt="Reverend Passy">
+            <h4 class="text-center mt-3">Rev. Passy Kahindo</h4>
+            <p class="text-center text-muted">Missionary & Preacher</p>
+        </div>
+    </div>
+
+    <!-- Details -->
+    <div class="col-md-8">
+        <div class="card profile-card p-4">
+
+            <h4 class="section-title">Personal Information</h4>
+            <hr>
+
+            <p><strong>Full Name:</strong> Passy Kahindo</p>
+            <p><strong>Date of Birth:</strong> 15 March 1985</p>
+            <p><strong>Nationality:</strong> Congolese</p>
+            <p><strong>Place of Birth:</strong> Goma, DR Congo</p>
+            <p><strong>Calling:</strong> Missionary</p>
+            <p><strong>Mission Country:</strong> Kenya</p>
+            <p><strong>Church:</strong> Gospel Mission Church</p>
+            <p><strong>Years in Ministry:</strong> 15+ Years</p>
+
+            <h4 class="section-title mt-4">Biography</h4>
+            <hr>
+
+            <p>
+                Reverend Passy Kahindo is a devoted servant of God and missionary from the Democratic Republic of Congo. 
+                From a young age, he felt the calling to serve God and spread the Gospel. Through prayer and dedication, 
+                he entered ministry and began preaching the Word of God across communities.
+            </p>
+
+            <p id="moreText" style="display:none;">
+                His missionary journey brought him to Kenya where he continues to impact lives through evangelism, teaching, 
+                and community service. Reverend Passy is passionate about youth empowerment, discipleship, and spreading hope 
+                through Christ. Many people have been transformed through his ministry, and he continues to serve faithfully 
+                with humility and love.
+            </p>
+
+            <button class="btn btn-outline-primary mt-2" onclick="toggleText()" id="readBtn">
+                Read More
+            </button>
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function toggleText() {
+    let moreText = document.getElementById("moreText");
+    let btn = document.getElementById("readBtn");
+
+    if (moreText.style.display === "none") {
+        moreText.style.display = "block";
+        btn.innerText = "Read Less";
+    } else {
+        moreText.style.display = "none";
+        btn.innerText = "Read More";
+    }
+}
+</script>
+
+</body>
+</html>

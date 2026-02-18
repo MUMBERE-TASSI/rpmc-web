@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sermons</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: #f4f6f9;
+}
+
+.header {
+    background: linear-gradient(to right, #0d6efd, #0dcaf0);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.card {
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.search-box {
+    max-width: 400px;
+    margin: auto;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+    <h2>Church Sermons</h2>
+    <p>Grow spiritually by listening to the Word</p>
+</div>
+
+<div class="container mt-4">
+
+    <!-- Search -->
+    <div class="search-box mb-4">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search sermon...">
+    </div>
+
+    <!-- Sermons List -->
+    <div class="row" id="sermonList">
+
+        <!-- Sermon 1 -->
+        <div class="col-md-4 sermon-item" data-title="Faith in God" data-preacher="Pastor John">
+            <div class="card p-3">
+                <h5>Faith in God</h5>
+                <p><strong>Preacher:</strong> Pastor John</p>
+                <p><strong>Date:</strong> 10 Feb 2026</p>
+                <button class="btn btn-primary" onclick="openSermon('Faith in God', 'Pastor John', 'This sermon teaches about trusting God in all situations.')">
+                    View Sermon
+                </button>
+            </div>
+        </div>
+
+        <!-- Sermon 2 -->
+        <div class="col-md-4 sermon-item" data-title="Power of Prayer" data-preacher="Pastor Mary">
+            <div class="card p-3">
+                <h5>Power of Prayer</h5>
+                <p><strong>Preacher:</strong> Pastor Mary</p>
+                <p><strong>Date:</strong> 05 Feb 2026</p>
+                <button class="btn btn-primary" onclick="openSermon('Power of Prayer', 'Pastor Mary', 'Learn how prayer changes lives and strengthens faith.')">
+                    View Sermon
+                </button>
+            </div>
+        </div>
+
+        <!-- Sermon 3 -->
+        <div class="col-md-4 sermon-item" data-title="Love One Another" data-preacher="Pastor David">
+            <div class="card p-3">
+                <h5>Love One Another</h5>
+                <p><strong>Preacher:</strong> Pastor David</p>
+                <p><strong>Date:</strong> 28 Jan 2026</p>
+                <button class="btn btn-primary" onclick="openSermon('Love One Another', 'Pastor David', 'Jesus teaches us to love others as ourselves.')">
+                    View Sermon
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Sermon Modal -->
+<div class="modal fade" id="sermonModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="sermonTitle"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <p><strong>Preacher:</strong> <span id="sermonPreacher"></span></p>
+        <p id="sermonContent"></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Open sermon modal
+function openSermon(title, preacher, content) {
+    document.getElementById("sermonTitle").innerText = title;
+    document.getElementById("sermonPreacher").innerText = preacher;
+    document.getElementById("sermonContent").innerText = content;
+
+    let modal = new bootstrap.Modal(document.getElementById("sermonModal"));
+    modal.show();
+}
+
+// Search sermons
+document.getElementById("searchInput").addEventListener("keyup", function() {
+    let value = this.value.toLowerCase();
+    let sermons = document.querySelectorAll(".sermon-item");
+
+    sermons.forEach(function(item) {
+        let title = item.getAttribute("data-title").toLowerCase();
+        let preacher = item.getAttribute("data-preacher").toLowerCase();
+
+        if (title.includes(value) || preacher.includes(value)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+});
+</script>
+
+</body>
+</html>
