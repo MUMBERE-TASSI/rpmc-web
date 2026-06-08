@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RPMC Church</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     /* Fullscreen background image */
@@ -65,11 +64,21 @@
       font-size: 1.2rem;
       border-radius: 30px;
     }
+    
+    /* Language selector spacing for mobile responsive alignment */
+    .lang-selector {
+      margin-left: 15px;
+    }
+    @media (max-width: 991.98px) {
+      .lang-selector {
+        margin-left: 0;
+        margin-top: 15px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
@@ -81,19 +90,30 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="ministries.html">Ministries</a></li>
+          <!--<li class="nav-item"><a class="nav-link" href="ministries.html">Ministries</a></li>-->
           <li class="nav-item"><a class="nav-link" href="sermons.html">Sermons</a></li>
           <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          
+          <li class="nav-item dropdown lang-selector">
+            <a class="btn btn-outline-light btn-sm dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              🌐 Language
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+              <li><a class="dropdown-menu-item dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+              <li><a class="dropdown-menu-item dropdown-item" href="#" onclick="changeLanguage('sw')">Kiswahili</a></li>
+              <li><a class="dropdown-menu-item dropdown-item" href="#" onclick="changeLanguage('fr')">Français</a></li>
+            </ul>
+          </li>
+          
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-content">
       <h1>WELCOME TO RPMC</h1>
@@ -103,73 +123,67 @@
     </div>
   </section>
 
-  <!-- Background Video -->
-<div style="position: relative; overflow: hidden;">
-  <video autoplay muted loop class="video-bg">
-    <source src="rpmc.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
-  <div class="overlay"></div>
+  <div style="position: relative; overflow: hidden;">
+    <video autoplay muted loop class="video-bg">
+      <source src="rpmc.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="overlay"></div>
 
-  <!-- Content -->
-  <div class="container py-5">
-    <div class="row align-items-center">
-      
-      <!-- Left: Image -->
-      <div class="col-md-5 text-center">
-        <img src="rev.jpg" alt="Rev. Passy KAHINDO" class="rev-img">
-        <h4 class="mt-3 text-light">Rev. Passy KAHINDO</h4>
+    <div class="container py-5">
+      <div class="row align-items-center">
+        
+        <div class="col-md-5 text-center">
+          <img src="rev.jpg" alt="Rev. Passy KAHINDO" class="rev-img">
+          <h4 class="mt-3 text-light">Rev. Passy KAHINDO</h4>
+        </div>
+        
+        <div class="col-md-7 text-light">
+          <h2>About Rev. Passy KAHINDO</h2>
+          <p>
+            Rev. Passy KAHINDO is a passionate servant of God and missionary dedicated to spreading 
+            the Gospel across nations. With years of experience in ministry, she has impacted lives 
+            through evangelism, teaching, and missions. Her vision is to raise strong believers, 
+            empower communities, and bring the message of Christ to unreached areas.
+          </p>
+          <a href="rev.html" class="btn btn-warning mt-3">Know More</a>
+        </div>
+        
       </div>
-      
-      <!-- Right: Description -->
-      <div class="col-md-7 text-light">
-        <h2>About Rev. Passy KAHINDO</h2>
-        <p>
-          Rev. Passy KAHINDO is a passionate servant of God and missionary dedicated to spreading 
-          the Gospel across nations. With years of experience in ministry, she has impacted lives 
-          through evangelism, teaching, and missions. Her vision is to raise strong believers, 
-          empower communities, and bring the message of Christ to unreached areas.
-        </p>
-        <a href="rev.html" class="btn btn-warning mt-3">Know More</a>
-      </div>
-      
     </div>
   </div>
-</div>
 
-<!-- CSS -->
-<style>
-  .video-bg {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -2;
-    object-fit: cover;
-  }
-  .overlay {
-    background: rgba(0,0,0,0.6);
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -1;
-  }
-  .rev-img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 50%;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0px 4px 20px rgba(0,0,0,0.6);
-  }
-  .rev-img:hover {
-    transform: scale(1.08);
-    box-shadow: 0px 6px 25px rgba(255, 193, 7, 0.8);
-  }
-</style>
+  <style>
+    .video-bg {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -2;
+      object-fit: cover;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.6);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+    .rev-img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 50%;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.6);
+    }
+    .rev-img:hover {
+      transform: scale(1.08);
+      box-shadow: 0px 6px 25px rgba(255, 193, 7, 0.8);
+    }
+  </style>
 
 
-  <!-- Service Section -->
   <section id="services" class="py-5 text-center">
     <div class="container">
       <h2 class="mb-4">Our Services</h2>
@@ -191,12 +205,20 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-dark text-light text-center py-3">
     <p>&copy; RPMC Church. All Rights Reserved.</p>
   </footer>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function changeLanguage(lang) {
+      // Temporary alert to show it works
+      alert("Language selected: " + lang.toUpperCase() + "\nNext step: Implement your translation logic or redirect to standard pages (e.g., index_" + lang + ".html).");
+      
+      // Example of redirection if you create separate pages (uncomment below if needed):
+      // window.location.href = "index_" + lang + ".html";
+    }
+  </script>
 </body>
 </html>
