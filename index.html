@@ -91,12 +91,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <!--<li class="nav-item"><a class="nav-link" href="ministries.html">Ministries</a></li>-->
-          <li class="nav-item"><a class="nav-link" href="sermons.html">Sermons</a></li>
-          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html" id="nav-home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html" id="nav-about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="sermons.html" id="nav-sermons">Sermons</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html" id="nav-events">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html" id="nav-contact">Contact</a></li>
           
           <li class="nav-item dropdown lang-selector">
             <a class="btn btn-outline-light btn-sm dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -116,10 +115,10 @@
 
   <section class="hero-section">
     <div class="hero-content">
-      <h1>WELCOME TO RPMC</h1>
-      <p>We Love You & We Encounter God Together</p>
-      <p>“For where two or three gather in my name, there am I with them.” – Matthew 18:20</p>
-      <a href="events.html" class="btn btn-light">Join Us This Sunday</a>
+      <h1 id="hero-title">WELCOME TO RPMC</h1>
+      <p id="hero-sub">We Love You & We Encounter God Together</p>
+      <p id="hero-verse">“For where two or three gather in my name, there am I with them.” – Matthew 18:20</p>
+      <a href="events.html" class="btn btn-light" id="hero-btn">Join Us This Sunday</a>
     </div>
   </section>
 
@@ -139,14 +138,14 @@
         </div>
         
         <div class="col-md-7 text-light">
-          <h2>About Rev. Passy KAHINDO</h2>
-          <p>
+          <h2 id="about-title">About Rev. Passy KAHINDO</h2>
+          <p id="about-text">
             Rev. Passy KAHINDO is a passionate servant of God and missionary dedicated to spreading 
             the Gospel across nations. With years of experience in ministry, she has impacted lives 
             through evangelism, teaching, and missions. Her vision is to raise strong believers, 
             empower communities, and bring the message of Christ to unreached areas.
           </p>
-          <a href="rev.html" class="btn btn-warning mt-3">Know More</a>
+          <a href="rev.html" class="btn btn-warning mt-3" id="about-btn">Know More</a>
         </div>
         
       </div>
@@ -183,23 +182,22 @@
     }
   </style>
 
-
   <section id="services" class="py-5 text-center">
     <div class="container">
-      <h2 class="mb-4">Our Services</h2>
-      <p class="lead">Experience worship, teaching, and fellowship at RPMC.</p>
+      <h2 class="mb-4" id="services-title">Our Services</h2>
+      <p class="lead" id="services-sub">Experience worship, teaching, and fellowship at RPMC.</p>
       <div class="row mt-4">
         <div class="col-md-4">
-          <h5>Sunday Service</h5>
-          <p>10:30 AM - Main Sanctuary</p>
+          <h5 id="service1-title">Sunday Service</h5>
+          <p id="service1-time">10:30 AM - Main Sanctuary</p>
         </div>
         <div class="col-md-4">
-          <h5>Bible Study</h5>
-          <p>Wednesday, 7:30 PM</p>
+          <h5 id="service2-title">Bible Study</h5>
+          <p id="service2-time">Wednesday, 7:30 PM</p>
         </div>
         <div class="col-md-4">
-          <h5>Youth Fellowship</h5>
-          <p>Friday, 5:30 PM</p>
+          <h5 id="service3-title">Youth Fellowship</h5>
+          <p id="service3-time">Friday, 5:30 PM</p>
         </div>
       </div>
     </div>
@@ -212,12 +210,89 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
+    const translations = {
+      en: {
+        "nav-home": "Home",
+        "nav-about": "About Us",
+        "nav-sermons": "Sermons",
+        "nav-events": "Events",
+        "nav-contact": "Contact",
+        "hero-title": "WELCOME TO RPMC",
+        "hero-sub": "We Love You & We Encounter God Together",
+        "hero-verse": "“For where two or three gather in my name, there am I with them.” – Matthew 18:20",
+        "hero-btn": "Join Us This Sunday",
+        "about-title": "About Rev. Passy KAHINDO",
+        "about-text": "Rev. Passy KAHINDO is a passionate servant of God and missionary dedicated to spreading the Gospel across nations. With years of experience in ministry, she has impacted lives through evangelism, teaching, and missions. Her vision is to raise strong believers, empower communities, and bring the message of Christ to unreached areas.",
+        "about-btn": "Know More",
+        "services-title": "Our Services",
+        "services-sub": "Experience worship, teaching, and fellowship at RPMC.",
+        "service1-title": "Sunday Service",
+        "service1-time": "10:30 AM - Main Sanctuary",
+        "service2-title": "Bible Study",
+        "service2-time": "Wednesday, 7:30 PM",
+        "service3-title": "Youth Fellowship",
+        "service3-time": "Friday, 5:30 PM"
+      },
+      sw: {
+        "nav-home": "Nyumbani",
+        "nav-about": "Kuhusu Sisi",
+        "nav-sermons": "Mahubiri",
+        "nav-events": "Matukio",
+        "nav-contact": "Wasiliana Nasi",
+        "hero-title": "KARIBU RPMC",
+        "hero-sub": "Tunawapenda & Tunakutana na Mungu Pamoja",
+        "hero-verse": "“Kwa kuwa walipo wawili watatu wamekusanyika kwa jina langu, nami nipo papo hapo katikati yao.” – Mathayo 18:20",
+        "hero-btn": "Jiunge Nasi Jumapili Hii",
+        "about-title": "Kuhusu Mchungaji Passy KAHINDO",
+        "about-text": "Mchungaji Passy KAHINDO ni mtumishi wa Mungu mwenye ari na mmisionari aliyejitolea kueneza Injili katika mataifa mbalimbali. Akiwa na uzoefu wa miaka mingi katika huduma, amegusa maisha ya wengi kupitia uinjilisti, mafundisho, na misheni. Maono yake ni kuinua waumini imara, kuwezesha jamii, na kufikisha ujumbe wa Kristo katika maeneo ambayo hayajafikiwa.",
+        "about-btn": "Jua Zaidi",
+        "services-title": "Ibadada Zetu",
+        "services-sub": "Pata uzoefu wa kuabudu, mafundisho, na ushirika hapa RPMC.",
+        "service1-title": "Ibadada ya Jumapili",
+        "service1-time": "Saa 4:30 Asubuhi - Patakatifu Kuu",
+        "service2-title": "Jifunze Biblia",
+        "service2-time": "Jumatano, Saa 1:30 Jioni",
+        "service3-title": "Ushirika wa Vijana",
+        "service3-time": "Ijumaa, Saa 11:30 Jioni"
+      },
+      fr: {
+        "nav-home": "Accueil",
+        "nav-about": "À Propos",
+        "nav-sermons": "Sermons",
+        "nav-events": "Événements",
+        "nav-contact": "Contact",
+        "hero-title": "BIENVENUE À L'RPMC",
+        "hero-sub": "Nous Vous Aimons & Nous Rencontrons Dieu Ensemble",
+        "hero-verse": "« Car là où deux ou trois sont assemblés en mon nom, je suis au milieu d'eux. » – Matthieu 18:20",
+        "hero-btn": "Rejoignez-nous ce dimanche",
+        "about-title": "À propos de la Rév. Passy KAHINDO",
+        "about-text": "La Rév. Passy KAHINDO est une servante de Dieu passionnée et une missionnaire dédiée à la propagation de l'Évangile à travers les nations. Avec des années d'expérience dans le ministère, elle a touché des vies par l'évangélisation, l'enseignement et les missions. Sa vision est de former des croyants forts, de responsabiliser les communautés et d'apporter le message du Christ aux régions non atteintes.",
+        "about-btn": "En Savoir Plus",
+        "services-title": "Nos Services",
+        "services-sub": "Vivez l'adoration, l'enseignement et la communion fraternelle à l'RPMC.",
+        "service1-title": "Culte du Dimanche",
+        "service1-time": "10h30 - Sanctuaire Principal",
+        "service2-title": "Étude Biblique",
+        "service2-time": "Mercredi, 19h30",
+        "service3-title": "Fraternité des Jeunes",
+        "service3-time": "Vendredi, 17h30"
+      }
+    };
+
     function changeLanguage(lang) {
-      // Temporary alert to show it works
-      alert("Language selected: " + lang.toUpperCase() + "\nNext step: Implement your translation logic or redirect to standard pages (e.g., index_" + lang + ".html).");
+      // Loop through all translatable fields in our selected language object
+      for (let id in translations[lang]) {
+        let element = document.getElementById(id);
+        if (element) {
+          element.innerText = translations[lang][id];
+        }
+      }
       
-      // Example of redirection if you create separate pages (uncomment below if needed):
-      // window.location.href = "index_" + lang + ".html";
+      // Update dropdown button text label dynamically
+      let label = "🌐 Language";
+      if(lang === 'sw') label = "🌐 Lugha";
+      if(lang === 'fr') label = "🌐 Langue";
+      document.getElementById('langDropdown').innerText = label;
     }
   </script>
 </body>
